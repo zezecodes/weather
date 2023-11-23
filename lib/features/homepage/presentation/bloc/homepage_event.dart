@@ -6,3 +6,5 @@ abstract class HomepageEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class FetchWeather extends HomepageEvent {}
