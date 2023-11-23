@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import '../../../../core/data/images.dart';
+import '../widgets/forecast_container.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -92,42 +93,35 @@ class _HomepageState extends State<Homepage> {
                             ],
                           ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Container(
-                              width: 100,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.white),
-                            ),
-                            Container(
-                              width: 100,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.white),
-                            )
-                          ],
+                        const Padding(
+                          padding: EdgeInsets.only(top: 30, bottom: 30),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              ForecastContainer(
+                                time: '5:34 pm',
+                                weather: 'Sunrise',
+                                image: Images.sunny,
+                              ),
+                              ForecastContainer(
+                                time: '6:34 pm',
+                                weather: 'Sunset',
+                                image: Images.night,
+                              )
+                            ],
+                          ),
                         ),
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Container(
-                              width: 100,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.white),
-                            ),
-                            Container(
-                              width: 100,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.white),
-                            )
+                            ForecastContainer(
+                                time: '12 °C',
+                                weather: 'Temp Max',
+                                image: Images.hotTemperature),
+                            ForecastContainer(
+                                time: '8 °C',
+                                weather: 'Temp Min',
+                                image: Images.coolTemperature)
                           ],
                         )
                       ],
