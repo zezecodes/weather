@@ -24,6 +24,7 @@ class ForecastContainer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 8.0, left: 5),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   weather,
