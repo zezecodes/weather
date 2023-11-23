@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../../../../core/data/images.dart';
+
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -48,19 +50,85 @@ class _HomepageState extends State<Homepage> {
                   padding: const EdgeInsets.only(left: 25),
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
-                    child: const Column(
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           '📍 Accra, Ghana',
                           style: TextStyle(color: Colors.white, fontSize: 15),
                         ),
-                        Text(
+                        const Text(
                           'Good Morning',
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 25,
                               fontWeight: FontWeight.bold),
+                        ),
+                        Image.asset(Images.thunderstorm),
+                        const Center(
+                          child: Column(
+                            children: [
+                              Text(
+                                '21 °C',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 50,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                'THUNDERSTORM',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.w300),
+                              ),
+                              Text(
+                                'Thursday 23 - 2:14pm',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w200),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              width: 100,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.white),
+                            ),
+                            Container(
+                              width: 100,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.white),
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              width: 100,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.white),
+                            ),
+                            Container(
+                              width: 100,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.white),
+                            )
+                          ],
                         )
                       ],
                     ),
