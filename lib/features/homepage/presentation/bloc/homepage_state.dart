@@ -13,4 +13,8 @@ class HomepageLoading extends HomepageState {}
 
 class HomepageFailure extends HomepageState {}
 
-class HomepageSuccess extends HomepageState {}
+class HomepageSuccess extends HomepageState {
+  final Weather weather;
+
+  const HomepageSuccess(this.weather);
+}
