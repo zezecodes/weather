@@ -27,8 +27,12 @@ class MyApp extends StatelessWidget {
             );
           } else {
             return const Scaffold(
+              backgroundColor: Colors.teal,
               body: Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  backgroundColor: Colors.white,
+                  color: Colors.black,
+                ),
               ),
             );
           }

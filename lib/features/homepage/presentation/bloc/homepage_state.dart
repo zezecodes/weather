@@ -17,4 +17,6 @@ class HomepageSuccess extends HomepageState {
   final Weather weather;
 
   const HomepageSuccess(this.weather);
+  @override
+  List<Object> get props => [weather];
 }
