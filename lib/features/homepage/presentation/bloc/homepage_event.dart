@@ -7,4 +7,11 @@ abstract class HomepageEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class FetchWeather extends HomepageEvent {}
+class FetchWeather extends HomepageEvent {
+  final Position position;
+
+  const FetchWeather({required this.position});
+
+  @override
+  List<Object> get props => [];
+}
