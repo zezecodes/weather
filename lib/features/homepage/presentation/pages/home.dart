@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:only_weather/features/homepage/presentation/bloc/homepage_bloc.dart';
 
 import '../../../../core/data/images.dart';
 import '../widgets/forecast_container.dart';
@@ -49,83 +51,86 @@ class _HomepageState extends State<Homepage> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 25),
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          '📍 Accra, Ghana',
-                          style: TextStyle(color: Colors.white, fontSize: 15),
-                        ),
-                        const Text(
-                          'Good Morning',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Image.asset(Images.thunderstorm),
-                        const Center(
-                          child: Column(
-                            children: [
-                              Text(
-                                '21 °C',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 50,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                'THUNDERSTORM',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.w300),
-                              ),
-                              Text(
-                                'Thursday 23 - 2:14pm',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w200),
-                              ),
-                            ],
+                  child: BlocBuilder<HomepageBloc, HomepageState>(
+                    builder: (BuildContext context, HomepageState state) { 
+                    return SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            '📍 Accra, Ghana',
+                            style: TextStyle(color: Colors.white, fontSize: 15),
                           ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 30, bottom: 30),
-                          child: Row(
+                          const Text(
+                            'Good Morning',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Image.asset(Images.thunderstorm),
+                          const Center(
+                            child: Column(
+                              children: [
+                                Text(
+                                  '21 °C',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 50,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  'THUNDERSTORM',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                                Text(
+                                  'Thursday 23 - 2:14pm',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w200),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 30, bottom: 30),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                ForecastContainer(
+                                  time: '5:34 pm',
+                                  weather: 'Sunrise',
+                                  image: Images.sunny,
+                                ),
+                                ForecastContainer(
+                                  time: '6:34 pm',
+                                  weather: 'Sunset',
+                                  image: Images.night,
+                                )
+                              ],
+                            ),
+                          ),
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               ForecastContainer(
-                                time: '5:34 pm',
-                                weather: 'Sunrise',
-                                image: Images.sunny,
-                              ),
+                                  time: '12 °C',
+                                  weather: 'Temp Max',
+                                  image: Images.hotTemperature),
                               ForecastContainer(
-                                time: '6:34 pm',
-                                weather: 'Sunset',
-                                image: Images.night,
-                              )
+                                  time: '8 °C',
+                                  weather: 'Temp Min',
+                                  image: Images.coolTemperature)
                             ],
-                          ),
-                        ),
-                        const Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            ForecastContainer(
-                                time: '12 °C',
-                                weather: 'Temp Max',
-                                image: Images.hotTemperature),
-                            ForecastContainer(
-                                time: '8 °C',
-                                weather: 'Temp Min',
-                                image: Images.coolTemperature)
-                          ],
-                        )
-                      ],
-                    ),
+                          )
+                        ],
+                      ),
+                    );},
                   ),
                 )
               ],

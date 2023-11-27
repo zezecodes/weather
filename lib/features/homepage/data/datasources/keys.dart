@@ -1,3 +1,3 @@
-class Keys{
-  static const String apiKey = "14bebe97d2a184ce428dc7147529440c";
+class Keys {
+  static const String apiKey = "2984cbdefe6012d5c1956a4954897ad7";
 }

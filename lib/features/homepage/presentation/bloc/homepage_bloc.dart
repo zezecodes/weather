@@ -15,9 +15,8 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
       try {
         WeatherFactory weatherData =
             WeatherFactory(Keys.apiKey, language: Language.ENGLISH);
-        Position position = await Geolocator.getCurrentPosition();
         Weather weather = await weatherData.currentWeatherByLocation(
-            position.latitude, position.longitude);
+            event.position.latitude, event.position.longitude);
         print(weather);
         emit(HomepageSuccess(weather));
       } catch (e) {
@@ -26,4 +25,3 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
     });
   }
 }
-
