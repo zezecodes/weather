@@ -7,6 +7,7 @@ import 'package:only_weather/features/homepage/presentation/bloc/homepage_bloc.d
 
 import '../../../../core/data/images.dart';
 import '../widgets/forecast_container.dart';
+import '../widgets/weather_picture.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -72,7 +73,8 @@ class _HomepageState extends State<Homepage> {
                                     fontSize: 25,
                                     fontWeight: FontWeight.bold),
                               ),
-                              Image.asset(Images.thunderstorm),
+                              weatherPicture(
+                                  code: state.weather.weatherConditionCode!),
                               Center(
                                 child: Column(
                                   children: [
@@ -103,7 +105,8 @@ class _HomepageState extends State<Homepage> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(top: 30, bottom: 30),
+                                padding:
+                                    const EdgeInsets.only(top: 30, bottom: 30),
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
@@ -145,7 +148,12 @@ class _HomepageState extends State<Homepage> {
                           ),
                         );
                       } else {
-                        return Container();
+                        return const Center(
+                          child: CircularProgressIndicator(
+                            color: Colors.blue,
+                            backgroundColor: Colors.black,
+                          ),
+                        );
                       }
                     },
                   ),
