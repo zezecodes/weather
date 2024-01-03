@@ -73,7 +73,7 @@ class _HomepageState extends State<Homepage> {
                                     fontSize: 25,
                                     fontWeight: FontWeight.bold),
                               ),
-                              weatherPicture(
+                              WeatherPicture(
                                   code: state.weather.weatherConditionCode!),
                               Center(
                                 child: Column(

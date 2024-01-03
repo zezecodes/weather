@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/data/images.dart';
 
-class weatherPicture extends StatelessWidget {
-  const weatherPicture({
+class WeatherPicture extends StatelessWidget {
+  const WeatherPicture({
     super.key,
     required this.code,
   });
